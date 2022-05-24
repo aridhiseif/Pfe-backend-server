@@ -6,7 +6,10 @@ const ClientSchema = mongoose.Schema({
     lastname : String,
     email : String , 
     password : String,
-    etat : String
+    etat : {
+        type:Boolean,
+        default:false
+    }
 }, {
     timestamps: true
 });

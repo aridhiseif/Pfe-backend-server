@@ -13,7 +13,8 @@ exports.create = (req, res) => {
   const voyage = new Voyage({
     conducteurId: req.body.conducteurId,
     start: req.body.start,
-    distination: req.body.distination,
+    destination: req.body.destination,
+    voiture:req.body.voiture,
     date: req.body.date,
     heure: req.body.heure,
   });
@@ -70,7 +71,7 @@ exports.findOne = (req, res) => {
 // Update a admin identified by the adminId in the request
 exports.update = (req, res) => {
   // Validate Request
-  if (!req.body.firstname) {
+  if (!req.body.conducteurId) {
     return res.status(400).send({
       message: "admin content can not be empty",
     });
@@ -81,7 +82,8 @@ exports.update = (req, res) => {
     req.params.voyageId,
     {
       start: req.body.start,
-      distination: req.body.distination,
+      destination: req.body.destination,
+      voiture: req.body.voiture,
       date: req.body.date,
       heure: req.body.heure,
     },
