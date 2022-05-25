@@ -42,6 +42,7 @@ require("./app/routes/voyage.routes.js")(app);
 require("./app/routes/comment.routes.js")(app);
 require("./app/routes/conducteur.routes.js")(app);
 require("./app/routes/reclamation.routes.js")(app);
+require("./app/routes/rapport.routes")(app);
 
 // listen for requests
 app.listen(3000, () => {
