@@ -1,3 +1,4 @@
+// the rationg module
 const Rating = require("../models/rating.model");
 
 // Create and Save a new rating
@@ -38,8 +39,7 @@ exports.findAll = (req, res) => {
     })
     .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving ratings.",
+        message: err.message || "Some error occurred while retrieving ratings.",
       });
     });
 };
