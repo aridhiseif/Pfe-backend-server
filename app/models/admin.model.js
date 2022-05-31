@@ -20,6 +20,10 @@ const AdminSchema = mongoose.Schema(
       type: String,
       required: [true, "password is required"],
     },
+    status: {
+      type: String,
+      default: "0",
+    },
   },
   {
     timestamps: true,

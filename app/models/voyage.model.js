@@ -5,9 +5,15 @@ const VoyageSchema = mongoose.Schema(
     conducteurId: String,
     start: String,
     destination: String,
-    voiture:String,
+    voiture: String,
     date: String,
     heure: String,
+    prix: String,
+    description: String,
+    archive: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
