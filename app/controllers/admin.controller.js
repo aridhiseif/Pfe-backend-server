@@ -65,6 +65,27 @@ exports.findOne = (req, res) => {
       });
     });
 };
+// login with credantials
+
+exports.findbycredantials = (req, res) => {
+  // res.send("hello world");
+  console.log("/login activated");
+  Admin.find(
+    {
+      email: req.body.email,
+      password: req.body.password,
+    },
+    function (err, admin) {
+      if (admin === []) {
+        res.send("admin not found");
+        console.log(err);
+      } else {
+        console.log(admin);
+        res.send(admin);
+      }
+    }
+  );
+};
 
 // Update a admin identified by the adminId in the request
 exports.update = (req, res) => {
