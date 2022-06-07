@@ -12,13 +12,17 @@ exports.create = (req, res) => {
   // Create a voyage
   const voyage = new Voyage({
     conducteurId: req.body.conducteurId,
-    start: req.body.start,
-    destination: req.body.destination,
-    voiture: req.body.voiture,
-    date: req.body.date,
+    mat: req.body.mat,
+    depart: req.body.depart,
+    fin: req.body.fin,
+    nom: req.body.nom,
+    marque: req.body.marque,
+    nbdeplace: req.body.nbdeplace,
+    datec: req.body.datec,
     heure: req.body.heure,
-    description: req.body.description,
-    prix: req.body.prix,
+    features: req.body.features,
+    prixvoyage: req.body.prixvoyage,
+    archive: req.body.archive,
   });
 
   // Save voyage in the database
@@ -84,13 +88,17 @@ exports.update = (req, res) => {
   Voyage.findByIdAndUpdate(
     req.params.voyageId,
     {
-      start: req.body.start,
-      destination: req.body.destination,
-      voiture: req.body.voiture,
-      date: req.body.date,
+      conducteurId: req.body.conducteurId,
+      mat: req.body.mat,
+      depart: req.body.depart,
+      fin: req.body.fin,
+      nom: req.body.nom,
+      marque: req.body.marque,
+      nbdeplace: req.body.nbdeplace,
+      datec: req.body.datec,
       heure: req.body.heure,
-      description: req.body.description,
-      prix: req.body.prix,
+      features: req.body.features,
+      prixvoyage: req.body.prixvoyage,
       archive: req.body.archive,
     },
     { new: true }

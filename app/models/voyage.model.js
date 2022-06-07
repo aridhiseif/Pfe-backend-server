@@ -3,13 +3,17 @@ const mongoose = require("mongoose");
 const VoyageSchema = mongoose.Schema(
   {
     conducteurId: String,
-    start: String,
-    destination: String,
-    voiture: String,
-    date: String,
+    mat: String,
+    depart: String,
+    fin: String,
+    nom: String,
+    marque: String,
+    nbdeplace: String,
+    datec: String,
     heure: String,
-    prix: String,
-    description: String,
+    bags: String,
+    features: String,
+    prixvoyage: String,
     archive: {
       type: Boolean,
       default: false,

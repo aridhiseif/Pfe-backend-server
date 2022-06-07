@@ -1,27 +1,29 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const ConducteurSchema = mongoose.Schema({
-
+const ConducteurSchema = mongoose.Schema(
+  {
     firstname: String,
-    lastname : String,
-    email : {
-        type:String,
-        required:true
-    } , 
-    password :{
-        type:String,
-        required:true
+    lastname: String,
+    email: {
+      type: String,
+      required: true,
     },
-    tel:{
-        type:String,
-        required:true
+    password: {
+      type: String,
+      required: true,
     },
-    etat : {
-        type:Boolean,
-        default: false
-    }
-}, {
-    timestamps: true
-});
+    tel: {
+      type: String,
+      required: true,
+    },
+    etat: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-module.exports = mongoose.model('Conducteur', ConducteurSchema);
+module.exports = mongoose.model("Conducteur", ConducteurSchema);
