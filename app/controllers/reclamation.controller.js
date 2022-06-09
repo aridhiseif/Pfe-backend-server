@@ -12,7 +12,9 @@ exports.create = (req, res) => {
   // Create a reclamation
   const reclamation = new Reclamation({
     userId: req.body.userId,
-    conducteurId: req.body.conducteurId,
+    voyageId: req.body.voyageId,
+    email: req.body.email,
+    sujet: req.body.sujet,
     reclamation: req.body.reclamation,
   });
 
@@ -82,7 +84,9 @@ exports.update = (req, res) => {
     req.params.reclamationId,
     {
       userId: req.body.userId,
-      voyageId: req.body.consucteurId,
+      voyageId: req.body.voyageId,
+      email: req.body.email,
+      sujet: req.body.sujet,
       reclamation: req.body.reclamation,
     },
     { new: true }

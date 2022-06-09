@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const ReclamationSchema = mongoose.Schema(
   {
     userId: String,
-    conducteurId: String,
+    voyageId: String,
+    email: String,
+    sujet: String,
     reclamation: String,
   },
   {
