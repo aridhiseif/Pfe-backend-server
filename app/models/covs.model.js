@@ -5,7 +5,9 @@ const CovsSchema = mongoose.Schema(
     clientId: String,
     voyageId: String,
     conducteurId: String,
-    nomClient: String,
+    firstname: String,
+    lastname: String,
+    email: String,
     etat: String,
   },
   {

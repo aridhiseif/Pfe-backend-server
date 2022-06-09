@@ -9,7 +9,9 @@ exports.create = (req, res) => {
     clientId: req.body.clientId,
     voyageId: req.body.voyageId,
     conducteurId: req.body.conducteurId,
-    nomClient: req.body.nomClient,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    email: req.body.email,
     etat: req.body.etat,
   });
 
