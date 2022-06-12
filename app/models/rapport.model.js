@@ -4,6 +4,8 @@ const RapportSchema = mongoose.Schema(
   {
     userId: String,
     conducteurId: String,
+    email:String,
+    sujet:String,
     rapport: String,
   },
   {

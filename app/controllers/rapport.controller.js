@@ -13,6 +13,8 @@ exports.create = (req, res) => {
   const rapport = new Rapport({
     userId: req.body.userId,
     conducteurId: req.body.conducteurId,
+    email: req.body.email,
+    sujet: req.body.sujet,  
     rapport: req.body.rapport,
   });
 
@@ -82,6 +84,7 @@ exports.update = (req, res) => {
     {
       userId: req.body.userId,
       voyageId: req.body.consucteurId,
+      sujet: req.body.sujet,
       rapport: req.body.rapport,
     },
     { new: true }
