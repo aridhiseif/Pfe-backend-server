@@ -10,4 +10,6 @@ module.exports = (app) => {
   app.put("/covs/:covsId", covs.update);
 
   app.delete("/covs/:covsId", covs.delete);
+
+  app.delete("/deletecovs/:conducteurId", covs.deleteByConducteurId);
 };

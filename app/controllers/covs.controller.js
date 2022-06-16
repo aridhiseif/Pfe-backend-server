@@ -41,6 +41,20 @@ exports.findAll = (req, res) => {
     });
 };
 
+//delete bu conducteurId
+exports.deleteByConducteurId = (req, res) => {
+  Covs.deleteMany(
+    { conducteurId: req.params.conducteurId },
+    function (err, resultat) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(resultat);
+      }
+    }
+  );
+};
+
 // Find a single covs with a covsId
 exports.findOne = (req, res) => {
   Covs.findById(req.params.covsId)
