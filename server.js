@@ -45,6 +45,7 @@ require("./app/routes/reclamation.routes.js")(app);
 require("./app/routes/rapport.routes")(app);
 require("./app/routes/rating.routes")(app);
 require("./app/routes/covs.routes")(app);
+require("./app/routes/contact.routes")(app);
 
 // listen for requests
 app.listen(3000, () => {
