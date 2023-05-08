@@ -67,6 +67,29 @@ exports.findOne = (req, res) => {
     });
 };
 
+//find one with credentials;
+exports.login = (req, res) => {
+  if (!req.body.email) {
+    return res.status(400).send({
+      message: "email can not be empty"
+    })
+  }
+  console.log(`
+    email:${req.body.email},
+    password:${req.body.password}
+    `)
+  Client.find({ 'email': req.body.email, 'password': req.body.password })
+    .then((client) => {
+      if (!client) {
+        return res.status(404).send({
+          message: "no client with these credantials"
+        })
+      }
+      console.log(client);
+      return res.status(200).send(client);
+    })
+}
+
 // Update a admin identified by the adminId in the request
 exports.update = (req, res) => {
   // Validate Request

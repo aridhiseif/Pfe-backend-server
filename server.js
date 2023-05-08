@@ -1,6 +1,7 @@
 const express = require("express");
 var cors = require("cors");
 const bodyParser = require("body-parser");
+const morgan = require("morgan");
 
 // create express app
 const app = express();
@@ -11,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse application/json
 app.use(bodyParser.json());
-
+app.use(morgan("dev"))
 // Configuring the database
 const dbConfig = require("./config/database.config.js");
 const mongoose = require("mongoose");
@@ -22,6 +23,7 @@ mongoose.Promise = global.Promise;
 mongoose
   .connect(dbConfig.url, {
     useNewUrlParser: true,
+    useUnifiedTopology: true
   })
   .then(() => {
     console.log("Successfully connected to the database");
